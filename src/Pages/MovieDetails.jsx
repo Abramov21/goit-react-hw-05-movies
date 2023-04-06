@@ -3,7 +3,7 @@ import { getFilmDetals } from 'components/services/imageApi';
 import { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
   //   console.log(useParams());
@@ -23,3 +23,4 @@ export const MovieDetails = () => {
     </main>
   );
 };
+export default MovieDetails;

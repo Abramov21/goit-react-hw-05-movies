@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { HomeList } from 'components/MoviesList/MoviesList';
 import { getFilmTrending } from 'components/services/imageApi';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
   // const { country } = useParams();
 
@@ -26,6 +26,7 @@ export const HomePage = () => {
   );
 };
 
+export default HomePage;
 // export const Home = () => {
 //     return (
 //       <main>

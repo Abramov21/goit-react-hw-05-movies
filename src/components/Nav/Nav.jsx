@@ -1,18 +1,13 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 export const Nav = () => {
-  const location = useLocation();
   return (
     <>
       <ul>
         <li>
-          <NavLink to="/" state={location}>
-            HomePage
-          </NavLink>
+          <NavLink to="/">HomePage</NavLink>
         </li>
         <li>
-          <NavLink to="/Movies" state={location}>
-            Movies
-          </NavLink>
+          <NavLink to="/Movies">Movies</NavLink>
         </li>
       </ul>
     </>

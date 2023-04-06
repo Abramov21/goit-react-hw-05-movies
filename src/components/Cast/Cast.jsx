@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
 
   const [cast, setCast] = useState([]);
@@ -45,3 +45,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

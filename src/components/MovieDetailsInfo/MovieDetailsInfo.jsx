@@ -6,15 +6,15 @@ export const MovieDetailsInfo = movie => {
   const GENRES = movie.movie.genres;
   console.log(GENRES);
 
-  // const filmTitle = `${movie.title} (${movie.release_date.slice(0, 4)})`;
   const userScore = Math.floor(movie.movie.vote_average * 10);
   const imgPath = `https://image.tmdb.org/t/p/w500${movie.movie.poster_path}`;
-  const location = useLocation();
 
-  // console.log(location);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
+
   return (
     <div className={s.container}>
-      <Link to={location.state} className={s.btn}>
+      <Link to={backLinkHref} className={s.btn}>
         Go back
       </Link>
       <div className={s.card}>
