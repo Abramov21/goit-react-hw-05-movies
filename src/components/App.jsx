@@ -1,30 +1,25 @@
-import { useState } from 'react';
-import { Searchbar } from './Searchbar/Searchbar';
-import { ImageGallery } from './ImageGallery/ImageGallery';
-import s from './App.module.css';
+// import s from './App.module.css';
+import { HomePage } from 'Pages/HomePage';
+import { Movies } from 'Pages/MoviesPage';
+import { Nav } from './Nav/Nav';
+import { Route, Routes } from 'react-router-dom';
+import { MovieDetails } from 'Pages/MovieDetails';
+import { Cast } from './Cast/Cast';
+import { Reviews } from './Reviews/Reviews';
 
 export const App = () => {
-  const [query, setQuery] = useState('');
-  const [page, setPage] = useState(1);
-
-  const changeQuery = query => {
-    setQuery(query);
-    setPage(1);
-    // this.setState({ query, page: 1 });
-    // console.log(query);
-  };
-
-  const handleLoadMore = () => {
-    // console.log('handleLoadMore');
-    setPage(prev => prev + 1);
-    // this.setState(prev => ({ page: prev.page + 1 }));
-  };
-
   return (
-    <div className={s.App}>
-      <Searchbar onSubmit={changeQuery} />
-      <ImageGallery query={query} page={page} onLoadMore={handleLoadMore} />
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
