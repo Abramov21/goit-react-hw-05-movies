@@ -5,7 +5,7 @@ import s from './SearchForm.module.css';
 export const SearchForm = () => {
   const [input, setInput] = useState('');
   const [search, setSearch] = useSearchParams(); // location.search
-
+  console.log(search);
   const handleSubmit = e => {
     e.preventDefault();
     if (!input.trim()) {
