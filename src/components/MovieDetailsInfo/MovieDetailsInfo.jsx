@@ -1,18 +1,21 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import s from './MovieDetailsInfo.module.css';
+import { useRef } from 'react';
 
 export const MovieDetailsInfo = movie => {
   const userScore = Math.floor(movie?.movie?.vote_average * 10);
   const imgPath = `https://image.tmdb.org/t/p/w500${movie.movie.poster_path}`;
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
-
+  const navigate = useNavigate();
+  const prevPage = useRef(location.state?.from);
+  // console.log(prevPage.current);
+  console.log(location.state);
   return (
     <div className={s.container}>
-      <Link to={backLinkHref} className={s.btn}>
-        Go back
-      </Link>
+      <button className={s.btn} onClick={() => navigate(prevPage.current)}>
+        Back{' '}
+      </button>
       <div className={s.card}>
         <img width="300" src={imgPath} alt={movie?.movie?.title} />
         <div className={s.info}>

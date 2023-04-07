@@ -1,18 +1,41 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import s from './SearchForm.module.css';
 
 export const SearchForm = () => {
-  const [input, setInput] = useState('');
-  const [search, setSearch] = useSearchParams(); // location.search
-  console.log(search);
+  const [searchParams, setSearch] = useSearchParams();
+  const params = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
+  // const { name, maxPrice, inStock } = params;
+
+  // const [search, setSearch] = useSearchParams();
+
+  // const queryParams = useMemo(() => {
+  //   return [...search].reduce((acc, [key, value]) => {
+  //     acc[key] = value;
+  //     console.log(acc);
+  //     console.log(key);
+  //     console.log(value);
+  //     return acc;
+  //   }, {});
+  // }, [search]);
+
+  // console.log(search);
+
+  const [input, setInput] = useState(params.search ?? '');
+
   const handleSubmit = e => {
     e.preventDefault();
     if (!input.trim()) {
       alert('Please, enter your request');
       return;
     }
-    setSearch({ query: input, page: 1 });
+    // setSearch({ query: input, page: 1 });
+    setSearch(prev => {
+      return { ...params, search: input };
+    });
   };
 
   return (
