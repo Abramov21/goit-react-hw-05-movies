@@ -10,7 +10,6 @@ export const MovieDetailsInfo = movie => {
   const navigate = useNavigate();
   const prevPage = useRef(location.state?.from);
   // console.log(prevPage.current);
-  console.log(location.state);
   return (
     <div className={s.container}>
       <button className={s.btn} onClick={() => navigate(prevPage.current)}>
