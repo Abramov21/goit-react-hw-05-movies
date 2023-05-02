@@ -1,0 +1,26 @@
+.box{
+    display: block;
+    padding: 0 40px;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+.list_item:first-child{
+    margin-right: 25px;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 24px;
+    color: rgb(128, 30, 30);
+}
+
+.link:hover{
+    color: blue;
+}

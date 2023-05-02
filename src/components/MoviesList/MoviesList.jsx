@@ -4,11 +4,10 @@ import s from './MoviesList.module.css';
 
 export const HomeList = ({ movies }) => {
   const location = useLocation();
-  console.log(movies);
+  // console.log(movies);
   return (
     <ul className={s.list}>
       {movies.map(({ id, title, poster_path, vote_average }) => {
-        console.log(vote_average);
         const imgPath = `https://image.tmdb.org/t/p/w500${poster_path}`;
         return (
           <li key={id} className={s.list__item}>
@@ -25,8 +24,8 @@ export const HomeList = ({ movies }) => {
                   className={s.image}
                 />
                 <div className={s.box_title}>
-                  <p className={s.asdads}>{title}</p>
-                  <p className={s.asdads}>{vote_average}</p>
+                  <p className={s.text_name}>{title}</p>
+                  <p className={s.text_average}>{vote_average.toFixed(1)}</p>
                 </div>
               </Link>
             </div>

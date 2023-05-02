@@ -13,24 +13,19 @@
 .list__item{
     display: inline-block;
     width: 300px ;
-    height: 530px ;
+    height: 480px ;
 
     outline: black solid 1px;
     border-radius: 5px;
-    margin-bottom: 10px;
 
-    justify-content: center;
-    align-items: center;
-    align-content:center;
     margin: 15px;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .link{
     display: inline-block;
-    /* height: 50px;
-    width: 250px ;
- */
+    /* height: 420px; */
+    height: 100%;
     /* font-size: 24px; */
     align-content:center;
     align-items: center;
@@ -41,19 +36,36 @@
 
 .box_title{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
+    height: 60px;
+    padding: 0px 15px;
+    /* border-top: 1px solid rgb(26, 31, 73); */
+    background-color: rgb(212, 229, 240);
 }
 
 .box_title p{
-    font-size: 18px;
+    font-size: 20px;
+    max-width: 250px;
 }
+
+.text_name{
+    margin-right: auto;
+    display: block;
+}
+.text_average{
+    /* margin-right: auto; */
+    display: block;
+}
+
 .image{
     display: block;
+    height: 420px;
 }
 
 .box_item{
     display: flex;
     height: 100%;
     align-items: center;
+    margin-bottom: auto;
 }
