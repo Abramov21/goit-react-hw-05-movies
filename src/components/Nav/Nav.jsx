@@ -16,6 +16,9 @@ export const Nav = () => {
           </NavLink>
         </li>
       </ul>
+      <NavLink to="/Favourite-Movies" className={s.link}>
+        Favoriat Movies
+      </NavLink>
     </header>
   );
 };

@@ -12,6 +12,7 @@ import { Outlet, Route, Routes, Navigate } from 'react-router-dom';
 
 const HomePage = lazy(() => import('../Pages/HomePage'));
 const Movies = lazy(() => import('../Pages/MoviesPage'));
+// const FavoriatMovies = lazy(() => import('../Pages/MoviesPage'));
 const MovieDetails = lazy(() => import('../Pages/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
@@ -35,6 +36,7 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/Movies" element={<Movies />} />
+          <Route path="/Favourite-Movies" element={<h1>Favourite-Movies</h1>} />
           <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />

@@ -13,6 +13,7 @@ export const ListFilms = ({ movies, title }) => {
             'https://st2.depositphotos.com/3643473/6205/i/950/depositphotos_62059967-stock-photo-3d-man-with-a-binocular.jpg';
           return (
             <li key={id} className={s.list__item}>
+              <button className={s.buttonLike}>Like</button>
               <Link
                 to={`/movies/${id}`}
                 state={{ from: location }}
