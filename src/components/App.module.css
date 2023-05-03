@@ -1,6 +1,12 @@
-.App {
+/* .app {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 16px;
     padding-bottom: 24px;
+  } */
+
+.app {
+    width: 1450px;
+    margin: 0 auto;
+    padding: 0 25px;
   }

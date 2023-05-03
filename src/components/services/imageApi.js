@@ -46,6 +46,7 @@ export const fetchFilmQuerys = (query, page = 1) => {
         page,
         include_adult: true,
         api_key: API_KEY,
+        total_pages: 8,
       },
     })
     .then(res => res.data);

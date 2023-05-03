@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 // import {  Route, Router } from 'react-router-dom';
-import { HomeList } from 'components/MoviesList/MoviesList';
+// import { HomeList } from 'components/MoviesList/MoviesList';
 import { getFilmTrending } from 'components/services/imageApi';
+import { ListFilms } from 'components/ListFilms/ListFilms';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -20,8 +21,9 @@ const HomePage = () => {
   }, []);
   return (
     <main>
-      <h1>Film Trending</h1>
-      {movies.length > 0 && <HomeList movies={movies} />}
+      {movies.length > 0 && (
+        <ListFilms movies={movies} title="Movies Trending" />
+      )}
     </main>
   );
 };
