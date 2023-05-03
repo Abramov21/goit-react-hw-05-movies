@@ -12,6 +12,7 @@ export const Movies = () => {
   const [searchParams] = useSearchParams();
   const search = searchParams.get('search');
 
+  // винести в окремий компонент
   const ButtonLoadMore = () => {
     return (
       <button

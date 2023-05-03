@@ -5,7 +5,7 @@ export const ListFilms = ({ movies, title }) => {
   console.log(movies);
   return (
     <>
-      <h1 className={s.mainTitle}>Movies Trending</h1>
+      {title && <h1 className={s.mainTitle}>Movies Trending</h1>}
       <ul className={s.list}>
         {movies?.map(({ id, title, poster_path, vote_average }) => {
           const imgPath = `https://image.tmdb.org/t/p/w500${poster_path}`;
