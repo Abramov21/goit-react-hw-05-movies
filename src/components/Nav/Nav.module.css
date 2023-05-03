@@ -1,18 +1,23 @@
 .box{
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0 40px;
+    background-color: #ec8f8f;
 }
 
 .list{
     list-style: none;
     display: flex;
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-right: auto;
     padding: 0px;
 }
 
 .list_item:first-child{
     margin-right: 25px;
+}
+.list_item{
+    /* margin-right: auto; */
 }
 
 .link{
