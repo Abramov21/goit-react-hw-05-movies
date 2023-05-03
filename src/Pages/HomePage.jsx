@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-// import {  Route, Router } from 'react-router-dom';
-// import { HomeList } from 'components/MoviesList/MoviesList';
 import { getFilmTrending } from 'components/services/imageApi';
 import { ListFilms } from 'components/ListFilms/ListFilms';
 
@@ -14,10 +12,6 @@ const HomePage = () => {
         setMovies(data.results);
       })
       .catch(err => console.log(err));
-
-    // getFilmTrendings()
-    //   .then(data => console.log(data))
-    //   .catch(err => console.log(err));
   }, []);
   return (
     <main>
