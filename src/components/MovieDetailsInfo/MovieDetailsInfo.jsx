@@ -24,26 +24,26 @@ export const MovieDetailsInfo = movie => {
           <h3>Overview</h3>
           <p>{movie?.movie?.overview}</p>
           <h3>Genres</h3>
-          <p>
-            {movie?.movie?.genres?.length > 0
-              ? movie?.movie?.genres?.map(item => item.name).join(', ')
-              : 'no info'}
-          </p>
-        </div>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <Link to="cast" state={location}>
+          <div className={s.genres}>
+            <p>
+              {movie?.movie?.genres?.length > 0
+                ? movie?.movie?.genres?.map(item => item.name).join(', ')
+                : 'no info'}
+            </p>
+            {/* <ul>
+              <li> */}
+            <Link to="cast" state={location} className={s.cast}>
               Cast
             </Link>
-          </li>
-          <li>
-            <Link to="reviews" state={location}>
-              Reviews
-            </Link>
-          </li>
-        </ul>
+            {/* </li>
+              {/* <li>
+                <Link to="reviews" state={location}>
+                  Reviews
+                </Link>
+              </li> */}
+            {/* </ul> */}
+          </div>
+        </div>
       </div>
     </div>
   );

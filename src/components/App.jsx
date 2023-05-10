@@ -6,6 +6,7 @@ import { Suspense, lazy } from 'react';
 // import { Movies } from 'Pages/MoviesPage';
 import { Nav } from './Nav/Nav';
 import { Outlet, Route, Routes, Navigate } from 'react-router-dom';
+import FavouriteMovies from './FavouriteMovies/FavouriteMovies';
 // import { MovieDetails } from 'Pages/MovieDetails';
 // import { Cast } from './Cast/Cast';
 // import { Reviews } from './Reviews/Reviews';
@@ -31,12 +32,11 @@ const SharedLayout = () => {
 export const App = () => {
   return (
     <>
-      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/Movies" element={<Movies />} />
-          <Route path="/Favourite-Movies" element={<h1>Favourite-Movies</h1>} />
+          <Route path="/Favourite-Movies" element={<FavouriteMovies />} />
           <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />

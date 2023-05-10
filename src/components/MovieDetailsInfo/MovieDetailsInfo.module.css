@@ -7,12 +7,16 @@
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+    /* background-color: #fff; */
 }
 
 .card {
+    position: relative;
+    background-color: #fff;
     margin-top: 15px;
     display: flex;
     box-shadow: 0px 3px 5px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .info {
@@ -22,6 +26,7 @@
 }
 
 .btn {
+    z-index: 2;
     width: 90px;
     display: block;
     padding: 5px 8px;
@@ -29,6 +34,23 @@
     border-radius: 2px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.18);
     cursor: pointer;
+    position: absolute;
+    top: 80px;
+    right: 285px;
+}
+.btn:hover{
+    background-color: rgb(221, 214, 214) ;
 }
 
 
+.genres{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.cast{
+    text-decoration: none;
+    color:black
+}

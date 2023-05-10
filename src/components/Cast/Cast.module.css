@@ -1,0 +1,42 @@
+
+.listCast{
+    position: relative;
+    display: flex;
+    max-width: 1000px;
+    padding: 0;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow: hidden;
+    /* overflow-block: auto; */
+    /* -webkit-text-stroke-color: aqua; */
+}
+
+/* .listbox{
+    /* touch-action: pan-y;
+    position: relative;
+    overflow: hidden; */
+/*
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; */
+/* }  */
+
+.listCastItem{
+    width: 120px;
+    height: 250px;
+    display: inline-block;
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+.image{
+    display: block;
+    width: 120px;
+}
+
+.name{
+    margin: 0;
+}

@@ -1,5 +1,4 @@
-
-.mainTitle{
+.title{
     display: block;
     background-color: rgb(96, 93, 104);
     color: rgb(236, 206, 206);
@@ -8,10 +7,6 @@
     /* align-items: center; */
     text-align: center;
     padding: 5px;
-}
-
-.buttonLike{
-    position: absolute;
 }
 
 .list{

@@ -2,6 +2,7 @@ import { getFilmCasts } from 'components/services/imageApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { toast } from 'react-toastify';
+import s from './Cast.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -11,6 +12,7 @@ const Cast = () => {
   useEffect(() => {
     getFilmCasts(movieId)
       .then(data => {
+        console.log(data);
         if (!data.cast.length) {
           alert('No cast info');
           return;
@@ -26,22 +28,24 @@ const Cast = () => {
 
   return (
     <>
-      <h3>Cast</h3>
-      <ul>
+      <div className={s.listCast}>
         {cast.map(({ character, id, original_name, profile_path }) => (
-          <li key={id}>
-            {profile_path && (
-              <img
-                width="120"
-                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                alt={original_name}
-              />
-            )}
-            <p>{original_name}</p>
-            <p>{character}</p>
-          </li>
+          <div className={s.listbox}>
+            <div key={id} className={s.listCastItem}>
+              {profile_path && (
+                <img
+                  width="120"
+                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                  alt={original_name}
+                  className={s.image}
+                />
+              )}
+              <p className={s.name}>{original_name}</p>
+              <p className={s.name}>{character}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };
