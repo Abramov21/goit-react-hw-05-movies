@@ -18,9 +18,9 @@
   margin-top: 5px;
 
   padding: 0px;
+  cursor: pointer;
 }
 .buttonLikeIcon {
-  /* background: none; */
   fill: inherit;
   stroke: red;
   stroke-width: 3px;
