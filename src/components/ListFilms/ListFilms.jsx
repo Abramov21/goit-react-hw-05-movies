@@ -4,7 +4,7 @@ import { ItemFilms } from './itemFilms/itemFilms';
 
 export const ListFilms = ({ movies, title }) => {
   const [state, setState] = useState([]);
-
+  const [like, setLike] = useState(undefined);
   const likeMovies = useCallback(
     () => JSON.parse(localStorage.getItem('likeMovie')) || [],
     []
@@ -13,7 +13,7 @@ export const ListFilms = ({ movies, title }) => {
   useEffect(() => {
     setState(likeMovies);
     console.log('рендер ліст філм');
-  }, [likeMovies, state]);
+  }, [likeMovies, like]);
 
   return (
     <div className={s.box}>
@@ -29,6 +29,7 @@ export const ListFilms = ({ movies, title }) => {
               poster_path={poster_path}
               vote_average={vote_average}
               isLike={isLike}
+              setLike={setLike}
             />
           );
         })}

@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import s from '../ListFilms.module.css';
 
 export const ItemFilms = React.memo(
-  ({ id, title, poster_path, vote_average, isLike }) => {
+  ({ id, title, poster_path, vote_average, isLike, setLike }) => {
     const location = useLocation();
 
     const [isActive, setIsActive] = useState(isLike);
@@ -22,7 +22,7 @@ export const ItemFilms = React.memo(
         const newLikeFilm = [...likeMovies, movie];
         window.localStorage.setItem('likeMovie', JSON.stringify(newLikeFilm));
       }
-
+      setLike(!isActive);
       setIsActive(!isActive);
     };
 
