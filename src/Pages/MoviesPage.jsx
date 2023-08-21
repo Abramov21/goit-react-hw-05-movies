@@ -3,6 +3,7 @@ import { fetchFilmQuerys } from 'components/services/imageApi';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ListFilms } from 'components/ListFilms/ListFilms';
+import { ButtonLoadMore } from 'components/ButtonLoadMore/ButtonLoadMore';
 // import { Button } from 'components/Button/Button';
 
 export const Movies = () => {
@@ -13,18 +14,6 @@ export const Movies = () => {
   const search = searchParams.get('search');
 
   // винести в окремий компонент
-  const ButtonLoadMore = () => {
-    return (
-      <button
-        onClick={() => {
-          console.log(123);
-          setPage(prev => prev + 1);
-        }}
-      >
-        load more
-      </button>
-    );
-  };
 
   useEffect(() => {
     if (!search) {
@@ -33,7 +22,7 @@ export const Movies = () => {
     fetchFilmQuerys(search, page)
       .then(data => {
         console.log(data);
-        setMovies(data.results);
+        setMovies(prev => [...prev, ...data.results]);
       })
       .catch(err => console.log(err));
   }, [search, page]);
@@ -42,7 +31,7 @@ export const Movies = () => {
     <>
       <SearchForm />
       {movies.length > 0 ? <ListFilms movies={movies} /> : <h1>sadasdsadsd</h1>}
-      <ButtonLoadMore />
+      <ButtonLoadMore setPage={setPage} />
     </>
   );
 };
