@@ -6,10 +6,10 @@
   } */
 
 .app {
-    /* width: 1450px; */
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 0 25px;
-    background-image: url(../../assets/1620980417_22-phonoteka_org-p-kino-24.jpg);
-    /* background-repeat: no-repeat; */
-  }
+  /* width: 1450px; */
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 25px;
+  /* background-image: url(../../assets/1620980417_22-phonoteka_org-p-kino-24.jpg); */
+  /* background-repeat: no-repeat; */
+}
