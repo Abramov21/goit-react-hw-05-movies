@@ -2,6 +2,7 @@ import { getFilmCasts } from 'components/services/imageApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { toast } from 'react-toastify';
+import { SwiperComponent } from 'components/swiper/swiper';
 import s from './Cast.module.css';
 
 const Cast = () => {
@@ -29,22 +30,7 @@ const Cast = () => {
   return (
     <>
       <div className={s.listCast}>
-        {cast.map(({ character, id, original_name, profile_path }) => (
-          <div className={s.listbox}>
-            <div key={id} className={s.listCastItem}>
-              {profile_path && (
-                <img
-                  width="120"
-                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                  alt={original_name}
-                  className={s.image}
-                />
-              )}
-              <p className={s.name}>{original_name}</p>
-              <p className={s.name}>{character}</p>
-            </div>
-          </div>
-        ))}
+        <SwiperComponent cast={cast} />
       </div>
     </>
   );
